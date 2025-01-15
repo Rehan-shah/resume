@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Result of the paper review</title>
+    <style>
+        :root {
+            --bg-gradient-start: #8b5cf6;
+            --bg-gradient-end: #d946ef;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-white: #ffffff;
+            --bg-gray-50: #f9fafb;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--bg-white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .download-btn {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #4f46e5;
+            transform: translateY(-1px);
+        }
+
+        .sender-info {
+            padding: 24px 32px;
+            background: var(--bg-gray-50);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            background: #e5e7eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .sender-details {
+            flex: 1;
+        }
+
+        .sender-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .sender-title {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .metadata {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .metadata-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .metadata-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .email-display {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .email-address {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        .email-content {
+            padding: 32px;
+            background: white;
+            line-height: 1.6;
+        }
+
+        .info-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .email-content p {
+            margin: 0 0 16px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="info-alert" id="infoAlert">
+        <strong>Verification Notice</strong>
+        <p>This is an official email for university admission purposes. The EML file contains the original email with
+            complete metadata and digital signatures for verification.</p>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Result of the paper review</h1>
+            <button class="download-btn" onclick="downloadEML()">
+                Download EML, the official email
+            </button>
+        </div>
+
+        <div class="sender-info">
+            <div class="avatar">
+                I
+            </div>
+            <div class="sender-details">
+                <div class="sender-name">INFORMATICA JOURNAL</div>
+                <div class="sender-title">Result of the paper review</div>
+            </div>
+        </div>
+
+        <div class="metadata">
+            <div class="metadata-row">
+                <span class="metadata-label">From:</span>
+                <div class="email-display">
+                    <span>INFORMATICA JOURNAL</span>
+                    <span class="email-address">&lt;office@informaticajournal.com&gt;</span>
+                </div>
+            </div>
+            <div class="metadata-row">
+                <span class="metadata-label">To:</span>
+                <div class="email-display">
+                    <span>rehan.shah@aischool.net</span>
+                    <span class="email-address">&lt;rehan.shah@aischool.net&gt;</span>
+                </div>
+            </div>
+            <div class="metadata-row">
+                <span class="metadata-label">Date:</span>
+                <span>Tue, 14 Jan 2025 12:00:08 +0000</span>
+            </div>
+        </div>
+
+        <div class="email-content">
+            Dear Author(s)<br>Rehan Shah, <br>It`s our pleasure to inform you that your submitted manuscript
+            entitled<br>'Global GPU Network (GGN): Performance Benchmarking and Comparative Analysis<br>Against
+            Traditional GPU Computing Models' meets the required qualifications<br>to be included in 'INFORMATICA
+            JOURNAL' (ISI-JCR Indexed) based upon the<br>reviewers` positive comments on your paper. To this end, we ask
+            you to do<br>the following required steps urgently to publish your paper on time. because<br>we plan to
+            include your paper in our coming issue. <br>1 Please consider the reviewers comments accessible through the
+            following<br>link and revise the required items (if any), then make a final version pdf<br>of your
+            manuscript:<br>http://www.informaticajournal.com/informatica/pdf/202501141200084098.pdf<br>Remember that the
+            bottom and the top margins for all pages should be 3.5cm.<br>blank boxes, texts or figures should not
+            cover/cross these important margins<br>where we should print the journal information. And please do NOT
+            number your<br>pages. <br>2 Please pay the required publication fee for your article.<br>The publication fee
+            is 623USD without official DOI. if you wish to have an<br>official DOI for your paper as well, with an extra
+            cost of only 177USD, we<br>can also register an official DOI for your accepted paper (800USD =
+            total<br>amount for publication fee+official DOI)<br><br>In both cases, your paper will be listed in Scopus
+            and WoS repositories but<br>always having an official DOI is recommended and will increase your
+            paper<br>citation.<br>Please kindly reply back to this email and let us know with which<br>publication
+            method you wish to proceed so that we can provide you with the<br>banking details .<br><br> <br> <br>3
+            Upload the final version pdf of the article in addition to your<br>transaction ID via the URL below
+            <br>Username: uu7k0m <br>Password: aytN5e <br>UPLOAD URL:
+            http://www.informaticajournal.com/final_version.html <br><br>The formal acceptance letter will be sent to
+            you soon after you complete the<br>steps above and the article publication will be 2-3 days later unless
+            there<br>is a problem with your payment or the final version layout (in this case our<br>publication
+            department will contact you). <br>Regards<br>Prof.Dr. G. Dzemyda<br>Editor-in-Chief<br>INFORMATICA JOURNAL
+            (ISSN: 0868-4952)<br>Office: INST INFORMATICS, 9 SAULETEKIS AV, VILNIUS, LITHUANIA, LT-10222<br>Coverage:
+            Science Citation Index Expanded (Impact Factor: 3.429)<br><br>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const alert = document.getElementById('infoAlert');
+            alert.style.display = 'block';
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 8000);
+        })
+
+        function downloadEML() {
+            const emlContent = `RGVsaXZlcmVkLVRvOiByZWhhbi5zaGFoQGFpc2Nob29sLm5ldA0KUmVjZWl2ZWQ6IGJ5IDIwMDI6YTA1OjYzNTk6NWE2OmIwOjFkMjo3YjBiOjdjZmYgd2l0aCBTTVRQIGlkIGVlMzhjc3AyNDc0NDk1cndiOw0KICAgICAgICBUdWUsIDE0IEphbiAyMDI1IDA0OjAwOjEzIC0wODAwIChQU1QpDQpYLUdvb2dsZS1TbXRwLVNvdXJjZTogQUdIVCtJR2YvaDdBbnJFVENFMmIrN0Z3RmNDWCt2WVhPTGFGb1ZLdmxWNGpNSEgxRU1iVXY5ZUNUK0FpdmZ4aWR6NFZOSitRdHI2bg0KWC1SZWNlaXZlZDogYnkgMjAwMjphMDU6NjIyYToxYTBkOmIwOjQ2Njo5YWIzOmMyYzcgd2l0aCBTTVRQIGlkIGQ3NWE3N2I2OTA1MmUtNDZjOTk1ZmE4NjRtcjE3ODg3NzM2MWNmLjE0LjE3MzY4NTYwMTI4ODk7DQogICAgICAgIFR1ZSwgMTQgSmFuIDIwMjUgMDQ6MDA6MTIgLTA4MDAgKFBTVCkNCkFSQy1TZWFsOiBpPTE7IGE9cnNhLXNoYTI1NjsgdD0xNzM2ODU2MDEyOyBjdj1ub25lOw0KICAgICAgICBkPWdvb2dsZS5jb207IHM9YXJjLTIwMjQwNjA1Ow0KICAgICAgICBiPUhoaFVUdlJWRVlFcFRuemhCZ0FRTHZEaW1lTThvb3JXQlZFdkJkcEpsVGVqVmxkN3lEdVM3NTNqN2xBQ0k2UlN0Ng0KICAgICAgICAgZ3RxNERjUDR6dGcrcmtHc2VNNk9XRWQ5ZFhWcWZWOXVwTlVBelNucG90OWpITUQxRjg2TG9teGV6TGRoN0tUdmgwa08NCiAgICAgICAgIGZpRDRVOS9pZUlmWXJQd1F2R2RsL0dmM3Ivbk81SnlmTzdsK0owa2pmbktLckQ3VGE2WmhIdUFpc3RLMmhhOGMvYXRuDQogICAgICAgICAwMHRjMnV4cTY3R1hQR0RKVUloTmFTQWkxZFQzYmtJVE9uZmV2ZGhsNEdibGk5OHJpb1RqdWRUUVlIY1BpY0JTd3F3Zg0KICAgICAgICAgSlhxTzFJYkRHODJhaThuUTRTOEtmajEzZWVHc2ZCNnd5WU1ZdE40N21NNVNMUXZnNUJrZyt6ZE1ERTRVcGh5QU5MYXcNCiAgICAgICAgIE9COUE9PQ0KQVJDLU1lc3NhZ2UtU2lnbmF0dXJlOiBpPTE7IGE9cnNhLXNoYTI1NjsgYz1yZWxheGVkL3JlbGF4ZWQ7IGQ9Z29vZ2xlLmNvbTsgcz1hcmMtMjAyNDA2MDU7DQogICAgICAgIGg9ZGF0ZTptaW1lLXZlcnNpb246bWVzc2FnZS1pZDpyZXBseS10bzpjYzpmcm9tOnN1YmplY3Q6dG86c2VuZGVyDQogICAgICAgICA6ZGtpbS1zaWduYXR1cmU7DQogICAgICAgIGJoPUpKN0dpaEM1ZVBMbXptaDdDUFV1d0I2SHlFNGN0d09oZ1dTT25ZdFZrSzA9Ow0KICAgICAgICBmaD0ycEQreXExdnc0NlQxUGZjY3YvTUNSRW1qNTBQTGllalRWZkI1L21ZLzlNPTsNCiAgICAgICAgYj1VVXliWTVsVVl6K0h5K3VJaWp0RTJOR0crUkQ3a1liMUd4ZXRmaTJqZm5XMlh5MVR4VjFHeWVITmQ4S3FRUklyR2ENCiAgICAgICAgIFJncnlXUTBBcU05TEI4ZWowOGd6dFZlcVdKdUNEVWRzUWdQYmo1bC9tSXI0OU4ya2JTZ3pUdUhZUHF3VjhFTmVRNFB0DQogICAgICAgICBZam9kZzMrWndYUlVaS0hpaEJRU0NLS3RPRHNYa1NlU1FaSzJyY29yd1EyM0dVR1lMeEFkSWptNDgxV00ySGlkNlFKWA0KICAgICAgICAgQSt6K1FlVGFKdkl5TmpGdU1aSHk1d3UyNDRaeGtnNUlUcGw3M2RVV0Z1WExCV3h5NHFWQnZEWklONC9DMWNMVXdlL2UNCiAgICAgICAgIEdDdG0xWW9MdFlCZzV6aHFIT21LZWJhL1E1TEJORWdNUU0ydEN0emM0emFRQ3RuRE9BV3FWZ1dkclhBeUY5Uk13WTJmDQogICAgICAgICB2eEt3PT07DQogICAgICAgIGRhcmE9Z29vZ2xlLmNvbQ0KQVJDLUF1dGhlbnRpY2F0aW9uLVJlc3VsdHM6IGk9MTsgbXguZ29vZ2xlLmNvbTsNCiAgICAgICBka2ltPXBhc3MgaGVhZGVyLmk9QG1nLmluZm9ybWF0aWNham91cm5hbC5jb20gaGVhZGVyLnM9bWFpbG8gaGVhZGVyLmI9RFV6Nmg4K3M7DQogICAgICAgc3BmPXBhc3MgKGdvb2dsZS5jb206IGRvbWFpbiBvZiBib3VuY2UrMGE2NDVkLmVmNmUwYi1yZWhhbi5zaGFoPWFpc2Nob29sLm5ldEBtZy5pbmZvcm1hdGljYWpvdXJuYWwuY29tIGRlc2lnbmF0ZXMgNjkuNzIuNDIuOSBhcyBwZXJtaXR0ZWQgc2VuZGVyKSBzbXRwLm1haWxmcm9tPSJib3VuY2UrMGE2NDVkLmVmNmUwYi1yZWhhbi5zaGFoPWFpc2Nob29sLm5ldEBtZy5pbmZvcm1hdGljYWpvdXJuYWwuY29tIg0KUmV0dXJuLVBhdGg6IDxib3VuY2UrMGE2NDVkLmVmNmUwYi1yZWhhbi5zaGFoPWFpc2Nob29sLm5ldEBtZy5pbmZvcm1hdGljYWpvdXJuYWwuY29tPg0KUmVjZWl2ZWQ6IGZyb20gbTQyLTkubWFpbGd1bi5uZXQgKG00Mi05Lm1haWxndW4ubmV0LiBbNjkuNzIuNDIuOV0pDQogICAgICAgIGJ5IG14Lmdvb2dsZS5jb20gd2l0aCBVVEY4U01UUFMgaWQgZDc1YTc3YjY5MDUyZS00NmM4NzQxNTgxYXNpMTA5NTExNDcxY2YuNTgyLjIwMjUuMDEuMTQuMDQuMDAuMTINCiAgICAgICAgZm9yIDxyZWhhbi5zaGFoQGFpc2Nob29sLm5ldD4NCiAgICAgICAgKHZlcnNpb249VExTMV8zIGNpcGhlcj1UTFNfQUVTXzEyOF9HQ01fU0hBMjU2IGJpdHM9MTI4LzEyOCk7DQogICAgICAgIFR1ZSwgMTQgSmFuIDIwMjUgMDQ6MDA6MTIgLTA4MDAgKFBTVCkNClJlY2VpdmVkLVNQRjogcGFzcyAoZ29vZ2xlLmNvbTogZG9tYWluIG9mIGJvdW5jZSswYTY0NWQuZWY2ZTBiLXJlaGFuLnNoYWg9YWlzY2hvb2wubmV0QG1nLmluZm9ybWF0aWNham91cm5hbC5jb20gZGVzaWduYXRlcyA2OS43Mi40Mi45IGFzIHBlcm1pdHRlZCBzZW5kZXIpIGNsaWVudC1pcD02OS43Mi40Mi45Ow0KQXV0aGVudGljYXRpb24tUmVzdWx0czogbXguZ29vZ2xlLmNvbTsNCiAgICAgICBka2ltPXBhc3MgaGVhZGVyLmk9QG1nLmluZm9ybWF0aWNham91cm5hbC5jb20gaGVhZGVyLnM9bWFpbG8gaGVhZGVyLmI9RFV6Nmg4K3M7DQogICAgICAgc3BmPXBhc3MgKGdvb2dsZS5jb206IGRvbWFpbiBvZiBib3VuY2UrMGE2NDVkLmVmNmUwYi1yZWhhbi5zaGFoPWFpc2Nob29sLm5ldEBtZy5pbmZvcm1hdGljYWpvdXJuYWwuY29tIGRlc2lnbmF0ZXMgNjkuNzIuNDIuOSBhcyBwZXJtaXR0ZWQgc2VuZGVyKSBzbXRwLm1haWxmcm9tPSJib3VuY2UrMGE2NDVkLmVmNmUwYi1yZWhhbi5zaGFoPWFpc2Nob29sLm5ldEBtZy5pbmZvcm1hdGljYWpvdXJuYWwuY29tIg0KREtJTS1TaWduYXR1cmU6IGE9cnNhLXNoYTI1Njsgdj0xOyBjPXJlbGF4ZWQvcmVsYXhlZDsgZD1tZy5pbmZvcm1hdGljYWpvdXJuYWwuY29tOyBxPWRucy90eHQ7IHM9bWFpbG87IHQ9MTczNjg1NjAxMjsgeD0xNzM2ODYzMjEyOw0KIGg9RGF0ZTogQ29udGVudC1UeXBlOiBNaW1lLVZlcnNpb246IE1lc3NhZ2UtSUQ6IFJlcGx5LVRvOiBDYzogRnJvbTogRnJvbTogU3ViamVjdDogU3ViamVjdDogVG86IFRvOiBTZW5kZXI6IFNlbmRlcjsNCiBiaD1KSjdHaWhDNWVQTG16bWg3Q1BVdXdCNkh5RTRjdHdPaGdXU09uWXRWa0swPTsNCiBiPURVejZoOCtzcGNheks3dHJ3cThsZ2k0eno3YnZpTlFPNjE4bVVDVmZkZ2dQT2gveHMvaDYwcGV6dU1VK2QrWDFqNmhHRkFYbmk4NnRRQnZjUThHM1JhS2l4RlVMQ0Npam94K1gxMTFmSmZEencrazFvVkoyVlorSldMSmh6VHNmZm56S2xxbkNQelFPNzBPaDVvMlNQYklaMFJ6bU45NzFyamZmU1FPRFRWQT0NClgtTWFpbGd1bi1TZW5kaW5nLUlwOiA2OS43Mi40Mi45DQpYLU1haWxndW4tU2VuZGluZy1JcC1Qb29sLU5hbWU6IA0KWC1NYWlsZ3VuLVNlbmRpbmctSXAtUG9vbDogDQpYLU1haWxndW4tU2lkOiBXeUl5TW1WbFpDSXNJbkpsYUdGdUxuTm9ZV2hBWVdselkyaHZiMnd1Ym1WMElpd2laV1kyWlRCaUlsMD0NClJlY2VpdmVkOiBmcm9tIGpvdXJuIChob3N0LTE4NS0xOTMtMTI3LTEwNC5uamFsbGEubmV0IFsxODUuMTkzLjEyNy4xMDRdKSBieSA2YmQ5YWQzYzMyZjINCiB3aXRoIFNNVFAgaWQgNjc4NjUxY2FjZGRjZWM0ZWJjOTk3M2YxICh2ZXJzaW9uPVRMUzEuMiwNCiBjaXBoZXI9VExTX0VDREhFX1JTQV9XSVRIX0FFU18xMjhfR0NNX1NIQTI1Nik7IFR1ZSwgMTQgSmFuIDIwMjUgMTI6MDA6MTAgR01UDQpTZW5kZXI6IG9mZmljZT1pbmZvcm1hdGljYWpvdXJuYWwuY29tQG1nLmluZm9ybWF0aWNham91cm5hbC5jb20NClJlY2VpdmVkOiBmcm9tIGluZm9ybWF0aWNham91cm4gYnkgam91cm4gd2l0aCBsb2NhbCAoRXhpbSA0Ljk2LjIpDQoJKGVudmVsb3BlLWZyb20gPG9mZmljZUBpbmZvcm1hdGljYWpvdXJuYWwuY29tPikNCglpZCAxdFhmYWEtMDA1ODBrLTFUOw0KCVR1ZSwgMTQgSmFuIDIwMjUgMTI6MDA6MDggKzAwMDANClRvOiByZWhhbi5zaGFoQGFpc2Nob29sLm5ldA0KU3ViamVjdDogPT91dGYtOD9RP1Jlc3VsdF9vZl90aGVfcGFwZXJfcmV2aWV3Pz0NClgtUEhQLVNjcmlwdDogaW5mb3JtYXRpY2Fqb3VybmFsLmNvbS9pbmZvcm1hdGljYS9pbmRleC5waHAvY3JvbiBmb3IgMTg1LjE5My4xMjcuMTA0DQpYLVBIUC1PcmlnaW5hdGluZy1TY3JpcHQ6IDEwMDA6RW1haWwucGhwDQpGcm9tOiAiSU5GT1JNQVRJQ0EgSk9VUk5BTCIgPG9mZmljZUBpbmZvcm1hdGljYWpvdXJuYWwuY29tPg0KQ2M6IG9mZmljZUBpbmZvcm1hdGljYWpvdXJuYWwuY29tDQpSZXBseS1UbzogIm9mZmljZUBpbmZvcm1hdGljYWpvdXJuYWwuY29tIiA8b2ZmaWNlQGluZm9ybWF0aWNham91cm5hbC5jb20+DQpYLVNlbmRlcjogb2ZmaWNlQGluZm9ybWF0aWNham91cm5hbC5jb20NClgtTWFpbGVyOiBDb2RlSWduaXRlcg0KWC1Qcmlvcml0eTogMyAoTm9ybWFsKQ0KTWVzc2FnZS1JRDogPDY3ODY1MWM4NjgzMWZAaW5mb3JtYXRpY2Fqb3VybmFsLmNvbT4NCk1pbWUtVmVyc2lvbjogMS4wDQpDb250ZW50LVR5cGU6IG11bHRpcGFydC9hbHRlcm5hdGl2ZTsgYm91bmRhcnk9IkJfQUxUXzY3ODY1MWM4NjgzNmIiDQpEYXRlOiBUdWUsIDE0IEphbiAyMDI1IDEyOjAwOjA4ICswMDAwDQoNClRoaXMgaXMgYSBtdWx0aS1wYXJ0IG1lc3NhZ2UgaW4gTUlNRSBmb3JtYXQuDQpZb3VyIGVtYWlsIGFwcGxpY2F0aW9uIG1heSBub3Qgc3VwcG9ydCB0aGlzIGZvcm1hdC4NCg0KLS1CX0FMVF82Nzg2NTFjODY4MzZiDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9dXRmLTgNCkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IDhiaXQNCg0KRGVhciBBdXRob3IocykNClJlaGFuIFNoYWgsIA0KSXRgcyBvdXIgcGxlYXN1cmUgdG8gaW5mb3JtIHlvdSB0aGF0IHlvdXIgc3VibWl0dGVkIG1hbnVzY3JpcHQgZW50aXRsZWQNCidHbG9iYWwgR1BVIE5ldHdvcmsgKEdHTik6IFBlcmZvcm1hbmNlIEJlbmNobWFya2luZyBhbmQgQ29tcGFyYXRpdmUgQW5hbHlzaXMNCkFnYWluc3QgVHJhZGl0aW9uYWwgR1BVIENvbXB1dGluZyBNb2RlbHMnIG1lZXRzIHRoZSByZXF1aXJlZCBxdWFsaWZpY2F0aW9ucw0KdG8gYmUgaW5jbHVkZWQgaW4gJ0lORk9STUFUSUNBIEpPVVJOQUwnIChJU0ktSkNSIEluZGV4ZWQpIGJhc2VkIHVwb24gdGhlDQpyZXZpZXdlcnNgIHBvc2l0aXZlIGNvbW1lbnRzIG9uIHlvdXIgcGFwZXIuIFRvIHRoaXMgZW5kLCB3ZSBhc2sgeW91IHRvIGRvDQp0aGUgZm9sbG93aW5nIHJlcXVpcmVkIHN0ZXBzIHVyZ2VudGx5IHRvIHB1Ymxpc2ggeW91ciBwYXBlciBvbiB0aW1lLiBiZWNhdXNlDQp3ZSBwbGFuIHRvIGluY2x1ZGUgeW91ciBwYXBlciBpbiBvdXIgY29taW5nIGlzc3VlLiANCjEgUGxlYXNlIGNvbnNpZGVyIHRoZSByZXZpZXdlcnMgY29tbWVudHMgYWNjZXNzaWJsZSB0aHJvdWdoIHRoZSBmb2xsb3dpbmcNCmxpbmsgYW5kIHJldmlzZSB0aGUgcmVxdWlyZWQgaXRlbXMgKGlmIGFueSksIHRoZW4gbWFrZSBhIGZpbmFsIHZlcnNpb24gcGRmDQpvZiB5b3VyIG1hbnVzY3JpcHQ6DQpodHRwOi8vd3d3LmluZm9ybWF0aWNham91cm5hbC5jb20vaW5mb3JtYXRpY2EvcGRmLzIwMjUwMTE0MTIwMDA4NDA5OC5wZGYNClJlbWVtYmVyIHRoYXQgdGhlIGJvdHRvbSBhbmQgdGhlIHRvcCBtYXJnaW5zIGZvciBhbGwgcGFnZXMgc2hvdWxkIGJlIDMuNWNtLg0KYmxhbmsgYm94ZXMsIHRleHRzIG9yIGZpZ3VyZXMgc2hvdWxkIG5vdCBjb3Zlci9jcm9zcyB0aGVzZSBpbXBvcnRhbnQgbWFyZ2lucw0Kd2hlcmUgd2Ugc2hvdWxkIHByaW50IHRoZSBqb3VybmFsIGluZm9ybWF0aW9uLiBBbmQgcGxlYXNlIGRvIE5PVCBudW1iZXIgeW91cg0KcGFnZXMuIA0KMiBQbGVhc2UgcGF5IHRoZSByZXF1aXJlZCBwdWJsaWNhdGlvbiBmZWUgZm9yIHlvdXIgYXJ0aWNsZS4NClRoZSBwdWJsaWNhdGlvbiBmZWUgaXMgNjIzVVNEIHdpdGhvdXQgb2ZmaWNpYWwgRE9JLiBpZiB5b3Ugd2lzaCB0byBoYXZlIGFuDQpvZmZpY2lhbCBET0kgZm9yIHlvdXIgcGFwZXIgYXMgd2VsbCwgd2l0aCBhbiBleHRyYSBjb3N0IG9mIG9ubHkgMTc3VVNELCB3ZQ0KY2FuIGFsc28gcmVnaXN0ZXIgYW4gb2ZmaWNpYWwgRE9JIGZvciB5b3VyIGFjY2VwdGVkIHBhcGVyICg4MDBVU0QgPSB0b3RhbA0KYW1vdW50IGZvciBwdWJsaWNhdGlvbiBmZWUrb2ZmaWNpYWwgRE9JKQ0KDQpJbiBib3RoIGNhc2VzLCB5b3VyIHBhcGVyIHdpbGwgYmUgbGlzdGVkIGluIFNjb3B1cyBhbmQgV29TIHJlcG9zaXRvcmllcyBidXQNCmFsd2F5cyBoYXZpbmcgYW4gb2ZmaWNpYWwgRE9JIGlzIHJlY29tbWVuZGVkIGFuZCB3aWxsIGluY3JlYXNlIHlvdXIgcGFwZXINCmNpdGF0aW9uLg0KUGxlYXNlIGtpbmRseSByZXBseSBiYWNrIHRvIHRoaXMgZW1haWwgYW5kIGxldCB1cyBrbm93IHdpdGggd2hpY2gNCnB1YmxpY2F0aW9uIG1ldGhvZCB5b3Ugd2lzaCB0byBwcm9jZWVkIHNvIHRoYXQgd2UgY2FuIHByb3ZpZGUgeW91IHdpdGggdGhlDQpiYW5raW5nIGRldGFpbHMgLg0KDQogDQogDQozIFVwbG9hZCB0aGUgZmluYWwgdmVyc2lvbiBwZGYgb2YgdGhlIGFydGljbGUgaW4gYWRkaXRpb24gdG8geW91cg0KdHJhbnNhY3Rpb24gSUQgdmlhIHRoZSBVUkwgYmVsb3cgDQpVc2VybmFtZTogdXU3azBtIA0KUGFzc3dvcmQ6IGF5dE41ZSANClVQTE9BRCBVUkw6IGh0dHA6Ly93d3cuaW5mb3JtYXRpY2Fqb3VybmFsLmNvbS9maW5hbF92ZXJzaW9uLmh0bWwgDQoNClRoZSBmb3JtYWwgYWNjZXB0YW5jZSBsZXR0ZXIgd2lsbCBiZSBzZW50IHRvIHlvdSBzb29uIGFmdGVyIHlvdSBjb21wbGV0ZSB0aGUNCnN0ZXBzIGFib3ZlIGFuZCB0aGUgYXJ0aWNsZSBwdWJsaWNhdGlvbiB3aWxsIGJlIDItMyBkYXlzIGxhdGVyIHVubGVzcyB0aGVyZQ0KaXMgYSBwcm9ibGVtIHdpdGggeW91ciBwYXltZW50IG9yIHRoZSBmaW5hbCB2ZXJzaW9uIGxheW91dCAoaW4gdGhpcyBjYXNlIG91cg0KcHVibGljYXRpb24gZGVwYXJ0bWVudCB3aWxsIGNvbnRhY3QgeW91KS4gDQpSZWdhcmRzDQpQcm9mLkRyLiBHLiBEemVteWRhDQpFZGl0b3ItaW4tQ2hpZWYNCklORk9STUFUSUNBIEpPVVJOQUwgKElTU046IDA4NjgtNDk1MikNCk9mZmljZTogSU5TVCBJTkZPUk1BVElDUywgOSBTQVVMRVRFS0lTIEFWLCBWSUxOSVVTLCBMSVRIVUFOSUEsIExULTEwMjIyDQpDb3ZlcmFnZTogU2NpZW5jZSBDaXRhdGlvbiBJbmRleCBFeHBhbmRlZCAoSW1wYWN0IEZhY3RvcjogMy40MjkpDQoNCg0KLS1CX0FMVF82Nzg2NTFjODY4MzZiDQpDb250ZW50LVR5cGU6IHRleHQvaHRtbDsgY2hhcnNldD11dGYtOA0KQ29udGVudC1UcmFuc2Zlci1FbmNvZGluZzogcXVvdGVkLXByaW50YWJsZQ0KDQpEZWFyIEF1dGhvcihzKTxici8+DQo8Yj5SZWhhbiBTaGFoLCA8L2I+PGJyLz48YnIvPg0KSXRgcyBvdXIgcGxlYXN1cmUgdG8gaW5mb3JtIHlvdSB0aGF0IHlvdXIgc3VibWl0dGVkIG1hbnVzY3JpcHQgZW50aXRsZWQgJ0dsPQ0Kb2JhbCBHUFUgTmV0d29yayAoR0dOKTogUGVyZm9ybWFuY2UgQmVuY2htYXJraW5nIGFuZCBDb21wYXJhdGl2ZSBBbmFseXNpcyBBPQ0KZ2FpbnN0IFRyYWRpdGlvbmFsIEdQVSBDb21wdXRpbmcgTW9kZWxzJyBtZWV0cyB0aGUgcmVxdWlyZWQgcXVhbGlmaWNhdGlvbnMgPQ0KdG8gYmUgaW5jbHVkZWQgaW4gJ0lORk9STUFUSUNBIEpPVVJOQUwnIChJU0ktSkNSIEluZGV4ZWQpIGJhc2VkIHVwb24gdGhlIHJlPQ0Kdmlld2Vyc2AgcG9zaXRpdmUgY29tbWVudHMgb24geW91ciBwYXBlci4gVG8gdGhpcyBlbmQsIHdlIGFzayB5b3UgdG8gZG8gdGhlPQ0KIGZvbGxvd2luZyByZXF1aXJlZCBzdGVwcyB1cmdlbnRseSB0byBwdWJsaXNoIHlvdXIgcGFwZXIgb24gdGltZS4gYmVjYXVzZSB3PQ0KZSBwbGFuIHRvIGluY2x1ZGUgeW91ciBwYXBlciBpbiBvdXIgY29taW5nIGlzc3VlLiA8YnIvPiA8YnIvPj0yMA0KPGI+MTwvYj4gUGxlYXNlIGNvbnNpZGVyIHRoZSByZXZpZXdlcnMgY29tbWVudHMgYWNjZXNzaWJsZSB0aHJvdWdoIHRoZSBmb2xsPQ0Kb3dpbmcgbGluayBhbmQgcmV2aXNlIHRoZSByZXF1aXJlZCBpdGVtcyAoaWYgYW55KSwgdGhlbiBtYWtlIGEgZmluYWwgdmVyc2lvPQ0KbiBwZGYgb2YgeW91ciBtYW51c2NyaXB0Ojxici8+DQpodHRwOi8vd3d3LmluZm9ybWF0aWNham91cm5hbC5jb20vaW5mb3JtYXRpY2EvcGRmLzIwMjUwMTE0MTIwMDA4NDA5OC5wZGY8YnI9DQovPjxici8+DQpSZW1lbWJlciB0aGF0IHRoZSBib3R0b20gYW5kIHRoZSB0b3AgbWFyZ2lucyBmb3IgYWxsIHBhZ2VzIHNob3VsZCBiZSAzLjVjbS49DQogYmxhbmsgYm94ZXMsIHRleHRzIG9yIGZpZ3VyZXMgc2hvdWxkIG5vdCBjb3Zlci9jcm9zcyB0aGVzZSBpbXBvcnRhbnQgbWFyZ2k9DQpucyB3aGVyZSB3ZSBzaG91bGQgcHJpbnQgdGhlIGpvdXJuYWwgaW5mb3JtYXRpb24uIEFuZCBwbGVhc2UgZG8gTk9UIG51bWJlciA9DQp5b3VyIHBhZ2VzLiA8YnIvPjxici8+PTIwDQo8Yj4yPC9iPiBQbGVhc2UgcGF5IHRoZSByZXF1aXJlZCBwdWJsaWNhdGlvbiBmZWUgZm9yIHlvdXIgYXJ0aWNsZS48YnIvPg0KVGhlIHB1YmxpY2F0aW9uIGZlZSBpcyA2MjNVU0Qgd2l0aG91dCBvZmZpY2lhbCBET0kuIGlmIHlvdSB3aXNoIHRvIGhhdmUgYW4gPQ0Kb2ZmaWNpYWwgRE9JIGZvciB5b3VyIHBhcGVyIGFzIHdlbGwsIHdpdGggYW4gZXh0cmEgY29zdCBvZiBvbmx5IDE3N1VTRCwgd2UgPQ0KY2FuIGFsc28gcmVnaXN0ZXIgYW4gb2ZmaWNpYWwgRE9JIGZvciB5b3VyIGFjY2VwdGVkIHBhcGVyICg4MDBVU0QgPTNEIHRvdGFsPQ0KIGFtb3VudCBmb3IgcHVibGljYXRpb24gZmVlK29mZmljaWFsIERPSSk8YnIvPg0KDQpJbiBib3RoIGNhc2VzLCB5b3VyIHBhcGVyIHdpbGwgYmUgbGlzdGVkIGluIFNjb3B1cyBhbmQgV29TIHJlcG9zaXRvcmllcyBidXQ9DQogYWx3YXlzIGhhdmluZyBhbiBvZmZpY2lhbCBET0kgaXMgcmVjb21tZW5kZWQgYW5kIHdpbGwgaW5jcmVhc2UgeW91ciBwYXBlciA9DQpjaXRhdGlvbi48YnIvPg0KUGxlYXNlIGtpbmRseSByZXBseSBiYWNrIHRvIHRoaXMgZW1haWwgYW5kIGxldCB1cyBrbm93IHdpdGggd2hpY2ggcHVibGljYXRpPQ0Kb24gbWV0aG9kIHlvdSB3aXNoIHRvIHByb2NlZWQgc28gdGhhdCB3ZSBjYW4gcHJvdmlkZSB5b3Ugd2l0aCB0aGUgYmFua2luZyBkPQ0KZXRhaWxzIC4NCg0KPGJyLz48YnIvPj0yMA0KPTIwDQo8Yj4zPC9iPiBVcGxvYWQgdGhlIGZpbmFsIHZlcnNpb24gcGRmIG9mIHRoZSBhcnRpY2xlIGluIGFkZGl0aW9uIHRvIHlvdXIgdHI9DQphbnNhY3Rpb24gSUQgdmlhIHRoZSBVUkwgYmVsb3cgPGJyLz48YnIvPj0yMA0KVXNlcm5hbWU6IHV1N2swbSA8YnIvPg0KUGFzc3dvcmQ6IGF5dE41ZSA8YnIvPg0KVVBMT0FEIFVSTDogPGEgaHJlZj0zRCdodHRwOi8vd3d3LmluZm9ybWF0aWNham91cm5hbC5jb20vZmluYWxfdmVyc2lvbi5odG1sPQ0KJz4gaHR0cDovL3d3dy5pbmZvcm1hdGljYWpvdXJuYWwuY29tL2ZpbmFsX3ZlcnNpb24uaHRtbCA8L2E+PGJyLz48YnIvPj0yMA0KDQoNClRoZSBmb3JtYWwgYWNjZXB0YW5jZSBsZXR0ZXIgd2lsbCBiZSBzZW50IHRvIHlvdSBzb29uIGFmdGVyIHlvdSBjb21wbGV0ZSB0aD0NCmUgc3RlcHMgYWJvdmUgYW5kIHRoZSBhcnRpY2xlIHB1YmxpY2F0aW9uIHdpbGwgYmUgMi0zIGRheXMgbGF0ZXIgdW5sZXNzIHRoZT0NCnJlIGlzIGEgcHJvYmxlbSB3aXRoIHlvdXIgcGF5bWVudCBvciB0aGUgZmluYWwgdmVyc2lvbiBsYXlvdXQgKGluIHRoaXMgY2FzZT0NCiBvdXIgcHVibGljYXRpb24gZGVwYXJ0bWVudCB3aWxsIGNvbnRhY3QgeW91KS4gPGJyLz48YnIvPg0KUmVnYXJkczxici8+DQo8Yj5Qcm9mLkRyLiBHLiBEemVteWRhPGJyLz4NCkVkaXRvci1pbi1DaGllZjxici8+DQpJTkZPUk1BVElDQSBKT1VSTkFMIChJU1NOOiAwODY4LTQ5NTIpPGJyLz4NCk9mZmljZTogSU5TVCBJTkZPUk1BVElDUywgOSBTQVVMRVRFS0lTIEFWLCBWSUxOSVVTLCBMSVRIVUFOSUEsIExULTEwMjIyPGJyLz0NCj4NCkNvdmVyYWdlOiBTY2llbmNlIENpdGF0aW9uIEluZGV4IEV4cGFuZGVkIChJbXBhY3QgRmFjdG9yOiAzLjQyOSk8L2I+DQoNCi0tQl9BTFRfNjc4NjUxYzg2ODM2Yi0tDQo=`;
+            const blob = new Blob([Uint8Array.from(atob(emlContent), c => c.charCodeAt(0))],
+                {type: 'message/rfc822'});
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "paper.eml";
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+
+            // Show info alert
+        }
+    </script>
+</body>
+
+</html>

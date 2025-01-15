@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TKS Future Founders Scholarship</title>
+    <style>
+        :root {
+            --bg-gradient-start: #8b5cf6;
+            --bg-gradient-end: #d946ef;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-white: #ffffff;
+            --bg-gray-50: #f9fafb;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--bg-white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .download-btn {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #4f46e5;
+            transform: translateY(-1px);
+        }
+
+        .sender-info {
+            padding: 24px 32px;
+            background: var(--bg-gray-50);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            background: #e5e7eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .sender-details {
+            flex: 1;
+        }
+
+        .sender-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .sender-title {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .metadata {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .metadata-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .metadata-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .email-display {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .email-address {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        .email-content {
+            padding: 32px;
+            background: white;
+            line-height: 1.6;
+        }
+
+        .info-alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            z-index: 1000;
+        }
+
+        .email-content p {
+            margin: 0 0 16px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="info-alert" id="infoAlert">
+        <strong>Verification Notice</strong>
+        <p>This is an official email for university admission purposes. The EML file contains the original email with
+            complete metadata and digital signatures for verification. This message will be disappear after a while.</p>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">TKS Future Founders Scholarship</h1>
+            <button class="download-btn" onclick="downloadEML()">
+                Download EML, the official email
+            </button>
+        </div>
+
+        <div class="sender-info">
+            <div class="avatar">
+                M
+            </div>
+            <div class="sender-details">
+                <div class="sender-name">Mikaela Ergas Lenett from TKS</div>
+                <div class="sender-title">TKS Future Founders Scholarship</div>
+            </div>
+        </div>
+
+        <div class="metadata">
+            <div class="metadata-row">
+                <span class="metadata-label">From:</span>
+                <div class="email-display">
+                    <span>Mikaela Ergas Lenett from TKS</span>
+                    <span class="email-address">&lt;andre.t@tks.world&gt;</span>
+                </div>
+            </div>
+            <div class="metadata-row">
+                <span class="metadata-label">To:</span>
+                <div class="email-display">
+                    <span>Rehan Shah</span>
+                    <span class="email-address">&lt;rehansnehalshah1@gmail.com&gt;</span>
+                </div>
+            </div>
+            <div class="metadata-row">
+                <span class="metadata-label">Date:</span>
+                <span>Thu, 25 Jul 2024 10:34:53 -0400</span>
+            </div>
+        </div>
+
+        <div class="email-content">
+            Hey Rehan!<br><br>Congrats on being awarded the Future Founder Scholarship! Your challenge<br>submission
+            really impressed us, and we're super excited about the<br>possibility of having you in our Innovate program
+            this fall.<br><br>Could you let us know if you plan to enrol, or should we offer the spot to<br>someone
+            else? If you have any questions or just want to chat about the<br>program, I'm here to help!<br><br>Hope to
+            hear from you soon!<br><br>All the best,<br><br>Mikaela<br><br>--<br><br>Mikaela Ergas Lenett<br>*Program
+            Director, TKS*<br>
+        </div>
+    </div>
+
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const alert = document.getElementById('infoAlert');
+            alert.style.display = 'block';
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 8000)
+        });
+
+        function downloadEML() {
+            const emlContent = `RGVsaXZlcmVkLVRvOiByZWhhbnNuZWhhbHNoYWgxQGdtYWlsLmNvbQ0KUmVjZWl2ZWQ6IGJ5IDIwMDI6YWE3OmQ5ZDM6MDpiMDo1OGI6NDliZjoyYjIwIHdpdGggU01UUCBpZCB2MTljc3A2OTg4ODkxZWRzOw0KICAgICAgICBUaHUsIDI1IEp1bCAyMDI0IDA3OjM0OjU1IC0wNzAwIChQRFQpDQpYLVJlY2VpdmVkOiBieSAyMDAyOmEyZTo4OGNkOjA6YjA6MmVmOjIwMTI6ZWVjZiB3aXRoIFNNVFAgaWQgMzgzMDhlN2ZmZjRjYS0yZjAzZGI3NDM2N21yMTkyNTYxODFmYS4yNi4xNzIxOTE4MDk0ODE0Ow0KICAgICAgICBUaHUsIDI1IEp1bCAyMDI0IDA3OjM0OjU0IC0wNzAwIChQRFQpDQpBUkMtU2VhbDogaT0xOyBhPXJzYS1zaGEyNTY7IHQ9MTcyMTkxODA5NDsgY3Y9bm9uZTsNCiAgICAgICAgZD1nb29nbGUuY29tOyBzPWFyYy0yMDE2MDgxNjsNCiAgICAgICAgYj1pR3VtZEZjeEIzbHByVnR0Y2R6WGIwdjllNS9IaDhyN2NFekdzK1JXWmpOYUo0Q2QyWTBZV0dnNk1TL0o0MUNsbFkNCiAgICAgICAgIHIvUVhoc2M0bEZ6NGhFWGFDQ01GV3VLSEsxelFZWGlxdmZLc09GTDY0TTczangvbDZkcC9Ya1JzTGxlVTd2STVTRFhmDQogICAgICAgICBtTUlLV3pvalkyclNVRnBFcXdzS0t1UFVyTkpIRWl4RHV5RkFCcXhleU05bUp3blE2dUZBaWFWczdVS3pYZkppRWdDZA0KICAgICAgICAgZkdyZUVwSkJXWHAwWnRvRkJEQnZDdWg4TjdEc3Vab0N6VzJIU2RQMm01MHlyQXpTTUZxeE1mek14OGk1T0xEQTVLUmoNCiAgICAgICAgIGZDR2h0bGNncS9FZEtPRzBGUHNHd3RVMjVIbDRTSXlTRmtXVDlsc0k1SVpWWXg1WnUvcGtpamZCZkVFWjg2eDc3OERIDQogICAgICAgICBzcVVnPT0NCkFSQy1NZXNzYWdlLVNpZ25hdHVyZTogaT0xOyBhPXJzYS1zaGEyNTY7IGM9cmVsYXhlZC9yZWxheGVkOyBkPWdvb2dsZS5jb207IHM9YXJjLTIwMTYwODE2Ow0KICAgICAgICBoPXRvOnN1YmplY3Q6bWVzc2FnZS1pZDpkYXRlOm1pbWUtdmVyc2lvbjpmcm9tOmRraW0tc2lnbmF0dXJlOw0KICAgICAgICBiaD01M2ovSmg3Mng2WXFhV2dySFozemxDMTlEVG5hOHdJVjh6cGJhTCtEY1JnPTsNCiAgICAgICAgZmg9YWdMaFF3ZFRkMUp1SlpkeUlUTWxBZEU4NTY4dUc2bCtJaDgrUEVjTWlHZz07DQogICAgICAgIGI9V3kreTkrcCtudTVET2RPdDdDWmdTUWlJeTRhQVJ5Wnh0MFJldTJ5aHBFc1U4RzVXWkN1R1dJRFpneFBRNzhBaUp1DQogICAgICAgICA4OWxKa0lCQktOVjBQblY3NWVwOGp5emlncHQrM3RTWlBSWWFWUGxzUHRaa05CY0JxYkViOHM2QlNBaG9ZQ2VnR1VMTQ0KICAgICAgICAgVlNKWHp5cnBmZzVEUEMxNkdqTTUyWlgxR043VzhrZTZqVjJtQ2JaZUVlbGhYbk1DY0NJcGxMVkJ6RitQb2h5c0h3NTANCiAgICAgICAgIEdlcGtQNFdkK2JrNG9jQk8xNEhBd0Y4eThJeDdLOHlVS0k4b2NWLzZEWjdXYTlIOWxxNVJjcVdmWUxhbXQ0bnhuRUx4DQogICAgICAgICBnZHpueGxONWRhdW1RSitySWV4V2hkNGdBU2V0K2xOMU81Y2RCVmNJMzdMd29mb2hIQUUvTVZYVzROMVlJUTg0Z1JxbQ0KICAgICAgICAgRjArZz09Ow0KICAgICAgICBkYXJhPWdvb2dsZS5jb20NCkFSQy1BdXRoZW50aWNhdGlvbi1SZXN1bHRzOiBpPTE7IG14Lmdvb2dsZS5jb207DQogICAgICAgZGtpbT1wYXNzIGhlYWRlci5pPUB0a3Mud29ybGQgaGVhZGVyLnM9Z29vZ2xlIGhlYWRlci5iPU9UcEx4MjlSOw0KICAgICAgIHNwZj1wYXNzIChnb29nbGUuY29tOiBkb21haW4gb2YgYW5kcmUudEB0a3Mud29ybGQgZGVzaWduYXRlcyAyMDkuODUuMjIwLjQxIGFzIHBlcm1pdHRlZCBzZW5kZXIpIHNtdHAubWFpbGZyb209YW5kcmUudEB0a3Mud29ybGQ7DQogICAgICAgZG1hcmM9cGFzcyAocD1OT05FIHNwPU5PTkUgZGlzPU5PTkUpIGhlYWRlci5mcm9tPXRrcy53b3JsZDsNCiAgICAgICBkYXJhPXBhc3MgaGVhZGVyLmk9QGdtYWlsLmNvbQ0KUmV0dXJuLVBhdGg6IDxhbmRyZS50QHRrcy53b3JsZD4NClJlY2VpdmVkOiBmcm9tIG1haWwtc29yLWY0MS5nb29nbGUuY29tIChtYWlsLXNvci1mNDEuZ29vZ2xlLmNvbS4gWzIwOS44NS4yMjAuNDFdKQ0KICAgICAgICBieSBteC5nb29nbGUuY29tIHdpdGggU01UUFMgaWQgMzgzMDhlN2ZmZjRjYS0yZjAzZDBkOGU4NHNvcjM2MDMxNDFmYS43LjIwMjQuMDcuMjUuMDcuMzQuNTQNCiAgICAgICAgZm9yIDxyZWhhbnNuZWhhbHNoYWgxQGdtYWlsLmNvbT4NCiAgICAgICAgKEdvb2dsZSBUcmFuc3BvcnQgU2VjdXJpdHkpOw0KICAgICAgICBUaHUsIDI1IEp1bCAyMDI0IDA3OjM0OjU0IC0wNzAwIChQRFQpDQpSZWNlaXZlZC1TUEY6IHBhc3MgKGdvb2dsZS5jb206IGRvbWFpbiBvZiBhbmRyZS50QHRrcy53b3JsZCBkZXNpZ25hdGVzIDIwOS44NS4yMjAuNDEgYXMgcGVybWl0dGVkIHNlbmRlcikgY2xpZW50LWlwPTIwOS44NS4yMjAuNDE7DQpBdXRoZW50aWNhdGlvbi1SZXN1bHRzOiBteC5nb29nbGUuY29tOw0KICAgICAgIGRraW09cGFzcyBoZWFkZXIuaT1AdGtzLndvcmxkIGhlYWRlci5zPWdvb2dsZSBoZWFkZXIuYj1PVHBMeDI5UjsNCiAgICAgICBzcGY9cGFzcyAoZ29vZ2xlLmNvbTogZG9tYWluIG9mIGFuZHJlLnRAdGtzLndvcmxkIGRlc2lnbmF0ZXMgMjA5Ljg1LjIyMC40MSBhcyBwZXJtaXR0ZWQgc2VuZGVyKSBzbXRwLm1haWxmcm9tPWFuZHJlLnRAdGtzLndvcmxkOw0KICAgICAgIGRtYXJjPXBhc3MgKHA9Tk9ORSBzcD1OT05FIGRpcz1OT05FKSBoZWFkZXIuZnJvbT10a3Mud29ybGQ7DQogICAgICAgZGFyYT1wYXNzIGhlYWRlci5pPUBnbWFpbC5jb20NCkRLSU0tU2lnbmF0dXJlOiB2PTE7IGE9cnNhLXNoYTI1NjsgYz1yZWxheGVkL3JlbGF4ZWQ7DQogICAgICAgIGQ9dGtzLndvcmxkOyBzPWdvb2dsZTsgdD0xNzIxOTE4MDk0OyB4PTE3MjI1MjI4OTQ7IGRhcmE9Z29vZ2xlLmNvbTsNCiAgICAgICAgaD10bzpzdWJqZWN0Om1lc3NhZ2UtaWQ6ZGF0ZTptaW1lLXZlcnNpb246ZnJvbTpmcm9tOnRvOmNjOnN1YmplY3QNCiAgICAgICAgIDpkYXRlOm1lc3NhZ2UtaWQ6cmVwbHktdG87DQogICAgICAgIGJoPTUzai9KaDcyeDZZcWFXZ3JIWjN6bEMxOURUbmE4d0lWOHpwYmFMK0RjUmc9Ow0KICAgICAgICBiPU9UcEx4MjlSNGNTemlEZXRwMmEvWDFhakhJVHkySU9RMG1weHY0Y1lSRzc3REFDd2QvbTQ2cW4yOHJXNGR3bWtucQ0KICAgICAgICAgZys5UEpxT1NadDdmOVc4c2tValRydDZ2My85L3NYSnREWHNFdzVqUlJDSlhqRUs4ZlROR0FQU2lEVW1paVZYNWJjcUwNCiAgICAgICAgIDlTM3VhSXJ6MnczTUhSWC82UzI0S3QwOUx0SXRkdFQvcVNpMDk4M3ZYdC8rU1F0SHJIeXJPdnVGMGY1bVdjeWY4bUZsDQogICAgICAgICA0YytLc1ZTSXBYdVNoMzhZb0I3R1VyL2ovTkRoV1FqUXMxYjBsdjFXYys0bmM2SHZOaU9hczlCSWs1MUlZdXIzYTZPUg0KICAgICAgICAgbEZ0eWZTME9naXVRRFR0dlVmNkxBck5OK3k3dllaOFh2NkhHQzQ3c0JEWkx6TTg4VHBWTGRwSXp6eHl2L0JIc0JvcVINCiAgICAgICAgIGI5NHc9PQ0KWC1Hb29nbGUtREtJTS1TaWduYXR1cmU6IHY9MTsgYT1yc2Etc2hhMjU2OyBjPXJlbGF4ZWQvcmVsYXhlZDsNCiAgICAgICAgZD0xZTEwMC5uZXQ7IHM9MjAyMzA2MDE7IHQ9MTcyMTkxODA5NDsgeD0xNzIyNTIyODk0Ow0KICAgICAgICBoPXRvOnN1YmplY3Q6bWVzc2FnZS1pZDpkYXRlOm1pbWUtdmVyc2lvbjpmcm9tOngtZ20tbWVzc2FnZS1zdGF0ZQ0KICAgICAgICAgOmZyb206dG86Y2M6c3ViamVjdDpkYXRlOm1lc3NhZ2UtaWQ6cmVwbHktdG87DQogICAgICAgIGJoPTUzai9KaDcyeDZZcWFXZ3JIWjN6bEMxOURUbmE4d0lWOHpwYmFMK0RjUmc9Ow0KICAgICAgICBiPXBOdGV3ZUxNTmxndjVDWmd2QmpzZ0gybHQ3VEljYnl3cEJtWGJMZmhISndsZkhTRzlsTnNuREwxQU1rN2J3OTJqTg0KICAgICAgICAgMHpvRWRheERSV2d5VTVnNmpIczJ4SG0zQzErVDcwR3JtNlZQSUhyY2I0ZVV2bW5TOTBvaFNIeWtSTkp0R3ZMRm16NnoNCiAgICAgICAgIGxKQjJqTlpMVlhvTVltWTVxQmdHS1VGbzBWWVZqOXZveHFnVjJDeFI2Z0xDZE5qWEVXZ2o2dS9TMDc3TUVLVmYrSjBWDQogICAgICAgICBvRWx2T21WQXQ3N1lMZXBLa3Y3RHM1aDFRRUcyVUJTclpiOGJnTW95RGJrWnFhekVWeWFzR0NNT2tINmVHaGxsS1RBbw0KICAgICAgICAgcDJudDBrQ2tGN3FhcVdLTk5yUklHWFFYdTd2ZGJ3OTRnTmh6VGJ0YnM0clZQczZVd1lXcTBnRjVjWkR5aVBHK1FONHANCiAgICAgICAgIFJyYmc9PQ0KWC1HbS1NZXNzYWdlLVN0YXRlOiBBT0p1MFl4aDQzQWdWM3FzWDUrVG81Y0JpREd0WkdjQXFBT0JNVkVwTjdxYzRnS05JQytwZElnVg0KCUVQeFFJSk9sdGJzNS9qNXRWTm1aMUhBR2Y3M09PanNTd2hoY281ZGFQY2FiY01JUk9KQzNZYUNJQksxTWhxbFRuc0NtQ1QvOEVoZQ0KCUkvT2g0TmVzdjliM2JpVURlS2FrSGUwNHpOWXIrN3BkeGVKSE1PMjhnS1hNck13S0ENClgtR29vZ2xlLVNtdHAtU291cmNlOiBBR0hUK0lGZlpLUDlWZGZOQU9kRTA3aC91ODk4ZndmNUsyY0x5TnA3WWtaZ2ZzMnZaNkI1N1QzRWFRdHFma0JOaGVjdEp2Wk1pOVZKbWkwMjNiak5rTmgrdGJBPQ0KWC1SZWNlaXZlZDogYnkgMjAwMjphMmU6ODZkYTowOmIwOjJlZjoyOGVkOjFmZjIgd2l0aCBTTVRQIGlkDQogMzgzMDhlN2ZmZjRjYS0yZjAzZGI1NmZlNm1yMTk5MzU5ODFmYS45LjE3MjE5MTgwOTM0NTM7IFRodSwgMjUgSnVsIDIwMjQNCiAwNzozNDo1MyAtMDcwMCAoUERUKQ0KUmVjZWl2ZWQ6IGZyb20gNDY2NjgwNTI2NDc0IG5hbWVkIHVua25vd24gYnkgZ21haWxhcGkuZ29vZ2xlLmNvbSB3aXRoDQogSFRUUFJFU1Q7IFRodSwgMjUgSnVsIDIwMjQgMTA6MzQ6NTMgLTA0MDANCkZyb206IE1pa2FlbGEgRXJnYXMgTGVuZXR0IGZyb20gVEtTIDxhbmRyZS50QHRrcy53b3JsZD4NCk1JTUUtVmVyc2lvbjogMS4wDQpYLUhTLUZheC1DaWQ6IDFjcm5hczRtejA1c2xrMnNiaTdtMHJpem1vbHhyajIzbmZ0MXhyNzBseHNvcmF6YTV5eml6cjFqYjk3MWJldGF2OGtlZDBhNGF3eGl0d3NsaDFqaDR0YjJ1eWZ1YWl2NGU5MWM4cmRydzd1NDc3YWtub2V1NWY0dG54eGVjNm93bjZqeDQ5ZHU4YWcyDQpEYXRlOiBUaHUsIDI1IEp1bCAyMDI0IDEwOjM0OjUzIC0wNDAwDQpNZXNzYWdlLUlEOiA8Q0FCczBfVmMzUGJNT1BDRlZNUUV5a0FfX29NR2duNkNSQjhKdEFOQlphcVBReHo1MHpBQG1haWwuZ21haWwuY29tPg0KU3ViamVjdDogVEtTIEZ1dHVyZSBGb3VuZGVycyBTY2hvbGFyc2hpcA0KVG86IFJlaGFuIFNoYWggPHJlaGFuc25laGFsc2hhaDFAZ21haWwuY29tPg0KQ29udGVudC1UeXBlOiBtdWx0aXBhcnQvYWx0ZXJuYXRpdmU7IGJvdW5kYXJ5PSIwMDAwMDAwMDAwMDA0YjBhMmQwNjFlMTM0YzM3Ig0KDQotLTAwMDAwMDAwMDAwMDRiMGEyZDA2MWUxMzRjMzcNCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD0iVVRGLTgiDQoNCkhleSBSZWhhbiENCg0KQ29uZ3JhdHMgb24gYmVpbmcgYXdhcmRlZCB0aGUgRnV0dXJlIEZvdW5kZXIgU2Nob2xhcnNoaXAhIFlvdXIgY2hhbGxlbmdlDQpzdWJtaXNzaW9uIHJlYWxseSBpbXByZXNzZWQgdXMsIGFuZCB3ZSdyZSBzdXBlciBleGNpdGVkIGFib3V0IHRoZQ0KcG9zc2liaWxpdHkgb2YgaGF2aW5nIHlvdSBpbiBvdXIgSW5ub3ZhdGUgcHJvZ3JhbSB0aGlzIGZhbGwuDQoNCkNvdWxkIHlvdSBsZXQgdXMga25vdyBpZiB5b3UgcGxhbiB0byBlbnJvbCwgb3Igc2hvdWxkIHdlIG9mZmVyIHRoZSBzcG90IHRvDQpzb21lb25lIGVsc2U/IElmIHlvdSBoYXZlIGFueSBxdWVzdGlvbnMgb3IganVzdCB3YW50IHRvIGNoYXQgYWJvdXQgdGhlDQpwcm9ncmFtLCBJJ20gaGVyZSB0byBoZWxwIQ0KDQpIb3BlIHRvIGhlYXIgZnJvbSB5b3Ugc29vbiENCg0KQWxsIHRoZSBiZXN0LA0KDQpNaWthZWxhDQoNCi0tDQoNCk1pa2FlbGEgRXJnYXMgTGVuZXR0DQoqUHJvZ3JhbSBEaXJlY3RvciwgVEtTKg0KDQotLTAwMDAwMDAwMDAwMDRiMGEyZDA2MWUxMzRjMzcNCkNvbnRlbnQtVHlwZTogdGV4dC9odG1sOyBjaGFyc2V0PSJVVEYtOCINCkNvbnRlbnQtVHJhbnNmZXItRW5jb2Rpbmc6IHF1b3RlZC1wcmludGFibGUNCg0KPGh0bWw+PGhlYWQ+PC9oZWFkPjxib2R5PjxkaXYgc3R5bGU9M0QiZm9udC1mYW1pbHk6c2Fucy1zZXJpZjtjb2xvcjojNDQ0NDQ0PQ0KIiBkaXI9M0QiYXV0byI+PHAgc3R5bGU9M0QibWFyZ2luOjAiPjxzcGFuIHN0eWxlPTNEImZvbnQtc2l6ZToxMXB0Ij5IZXkgUmVoPQ0KYW4hPC9zcGFuPjwvcD48YnI+PHAgc3R5bGU9M0QibWFyZ2luOjAiPjxzcGFuIHN0eWxlPTNEImZvbnQtc2l6ZToxMXB0Ij5Db25nPQ0KcmF0cyBvbiBiZWluZyBhd2FyZGVkIHRoZSBGdXR1cmUgRm91bmRlciBTY2hvbGFyc2hpcCEgWW91ciBjaGFsbGVuZ2Ugc3VibWlzPQ0Kc2lvbiByZWFsbHkgaW1wcmVzc2VkIHVzLCBhbmQgd2UmIzM5O3JlIHN1cGVyIGV4Y2l0ZWQgYWJvdXQgdGhlIHBvc3NpYmlsaXR5PQ0KIG9mIGhhdmluZyB5b3UgaW4gb3VyIElubm92YXRlIHByb2dyYW0gdGhpcyBmYWxsLjwvc3Bhbj48L3A+PGJyPjxwIHN0eWxlPTNEPQ0KIm1hcmdpbjowIj48c3BhbiBzdHlsZT0zRCJmb250LXNpemU6MTFwdCI+Q291bGQgeW91IGxldCB1cyBrbm93IGlmIHlvdSBwbGFuPQ0KIHRvIGVucm9sLCBvciBzaG91bGQgd2Ugb2ZmZXIgdGhlIHNwb3QgdG8gc29tZW9uZSBlbHNlPyBJZiB5b3UgaGF2ZSBhbnkgcXVlPQ0Kc3Rpb25zIG9yIGp1c3Qgd2FudCB0byBjaGF0IGFib3V0IHRoZSBwcm9ncmFtLCBJJiMzOTttIGhlcmUgdG8gaGVscCE8L3NwYW4+PQ0KPC9wPjxicj48cCBzdHlsZT0zRCJtYXJnaW46MCI+PHNwYW4gc3R5bGU9M0QiZm9udC1zaXplOjExcHQiPkhvcGUgdG8gaGVhciBmPQ0Kcm9tIHlvdSBzb29uITwvc3Bhbj48L3A+PGJyPjxwIHN0eWxlPTNEIm1hcmdpbjowIj48c3BhbiBzdHlsZT0zRCJmb250LXNpemU6PQ0KMTFwdCI+QWxsIHRoZSBiZXN0LDwvc3Bhbj48L3A+PHAgc3R5bGU9M0QibWFyZ2luOjAiPjxzcGFuIHN0eWxlPTNEImZvbnQtc2l6PQ0KZToxMXB0Ij5NaWthZWxhPC9zcGFuPjwvcD48cCBzdHlsZT0zRCJtYXJnaW46MCI+PHNwYW4gc3R5bGU9M0QiZm9udC1zaXplOjExPQ0KcHQiPi0tPC9zcGFuPjwvcD48YnI+PGRpdj48ZGl2Pk1pa2FlbGEgRXJnYXMgTGVuZXR0PC9kaXY+PGRpdj48c3Ryb25nPlByb2dyPQ0KYW0gRGlyZWN0b3IsIFRLUzwvc3Ryb25nPjwvZGl2PjwvZGl2PjxkaXYgc3R5bGU9M0QiY29sb3I6IzMzNDc1Yjtmb250LWZhbWlsPQ0KeTomIzM5O3NhbnMtc2VyaWYmIzM5Oztmb250LXdlaWdodDo0MDA7Zm9udC1zaXplOjE0cHgiPjwvZGl2Pjxicj48L2Rpdj48aW1nPQ0KIHdpZHRoPTNEIjEiIGhlaWdodD0zRCIxIiBzdHlsZT0zRCJkaXNwbGF5Om5vbmUiIGFsdD0zRCIiIHNyYz0zRCJodHRwczovL2NCPQ0KWFo4MDQubmExLmhzLXNlcnZpY2UtZW5nYWdlLmNvbS9DdG8vWlMrMjMyODQvY0JYWjgwNC9SNVI4YjQ3UXdONndkdjJrMmZEeGpXPQ0KMU52TmxfM0pHRzNUVzFWbk02dDFYblpzcFcxR3l0YzgzREhXS2hXMVE2OHpCM0dMYmNXVzNMSGNKUjFWM0hkM24xWDB5X2o0VzEiPQ0KPjwvYm9keT48L2h0bWw+DQoNCi0tMDAwMDAwMDAwMDAwNGIwYTJkMDYxZTEzNGMzNy0tDQo=`;
+            const blob = new Blob([Uint8Array.from(atob(emlContent), c => c.charCodeAt(0))],
+                {type: 'message/rfc822'});
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "TKS.eml";
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+
+            // Show info alert
+        }
+    </script>
+
+</body>
+
+</html>

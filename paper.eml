@@ -1,0 +1,185 @@
+Delivered-To: rehan.shah@aischool.net
+Received: by 2002:a05:6359:5a6:b0:1d2:7b0b:7cff with SMTP id ee38csp2474495rwb;
+        Tue, 14 Jan 2025 04:00:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGf/h7AnrETCE2b+7FwFcCX+vYXOLaFoVKvlV4jMHH1EMbUv9eCT+Aivfxidz4VNJ+Qtr6n
+X-Received: by 2002:a05:622a:1a0d:b0:466:9ab3:c2c7 with SMTP id d75a77b69052e-46c995fa864mr178877361cf.14.1736856012889;
+        Tue, 14 Jan 2025 04:00:12 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736856012; cv=none;
+        d=google.com; s=arc-20240605;
+        b=HhhUTvRVEYEpTnzhBgAQLvDimeM8oorWBVEvBdpJlTejVld7yDuS753j7lACI6RSt6
+         gtq4DcP4ztg+rkGseM6OWEd9dXVqfV9upNUAzSnpot9jHMD1F86LomxezLdh7KTvh0kO
+         fiD4U9/ieIfYrPwQvGdl/Gf3r/nO5JyfO7l+J0kjfnKKrD7Ta6ZhHuAistK2ha8c/atn
+         00tc2uxq67GXPGDJUIhNaSAi1dT3bkITOnfevdhl4Gbli98rioTjudTQYHcPicBSwqwf
+         JXqO1IbDG82ai8nQ4S8Kfj13eeGsfB6wyYMYtN47mM5SLQvg5Bkg+zdMDE4UphyANLaw
+         OB9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=date:mime-version:message-id:reply-to:cc:from:subject:to:sender
+         :dkim-signature;
+        bh=JJ7GihC5ePLmzmh7CPUuwB6HyE4ctwOhgWSOnYtVkK0=;
+        fh=2pD+yq1vw46T1Pfccv/MCREmj50PLiejTVfB5/mY/9M=;
+        b=UUybY5lUYz+Hy+uIijtE2NGG+RD7kYb1Gxetfi2jfnW2Xy1TxV1GyeHNd8KqQRIrGa
+         RgryWQ0AqM9LB8ej08gztVeqWJuCDUdsQgPbj5l/mIr49N2kbSgzTuHYPqwV8ENeQ4Pt
+         Yjodg3+ZwXRUZKHihBQSCKKtODsXkSeSQZK2rcorwQ23GUGYLxAdIjm481WM2Hid6QJX
+         A+z+QeTaJvIyNjFuMZHy5wu244Zxkg5ITpl73dUWFuXLBWxy4qVBvDZIN4/C1cLUwe/e
+         GCtm1YoLtYBg5zhqHOmKeba/Q5LBNEgMQM2tCtzc4zaQCtnDOAWqVgWdrXAyF9RMwY2f
+         vxKw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg.informaticajournal.com header.s=mailo header.b=DUz6h8+s;
+       spf=pass (google.com: domain of bounce+0a645d.ef6e0b-rehan.shah=aischool.net@mg.informaticajournal.com designates 69.72.42.9 as permitted sender) smtp.mailfrom="bounce+0a645d.ef6e0b-rehan.shah=aischool.net@mg.informaticajournal.com"
+Return-Path: <bounce+0a645d.ef6e0b-rehan.shah=aischool.net@mg.informaticajournal.com>
+Received: from m42-9.mailgun.net (m42-9.mailgun.net. [69.72.42.9])
+        by mx.google.com with UTF8SMTPS id d75a77b69052e-46c8741581asi109511471cf.582.2025.01.14.04.00.12
+        for <rehan.shah@aischool.net>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 14 Jan 2025 04:00:12 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+0a645d.ef6e0b-rehan.shah=aischool.net@mg.informaticajournal.com designates 69.72.42.9 as permitted sender) client-ip=69.72.42.9;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg.informaticajournal.com header.s=mailo header.b=DUz6h8+s;
+       spf=pass (google.com: domain of bounce+0a645d.ef6e0b-rehan.shah=aischool.net@mg.informaticajournal.com designates 69.72.42.9 as permitted sender) smtp.mailfrom="bounce+0a645d.ef6e0b-rehan.shah=aischool.net@mg.informaticajournal.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.informaticajournal.com; q=dns/txt; s=mailo; t=1736856012; x=1736863212;
+ h=Date: Content-Type: Mime-Version: Message-ID: Reply-To: Cc: From: From: Subject: Subject: To: To: Sender: Sender;
+ bh=JJ7GihC5ePLmzmh7CPUuwB6HyE4ctwOhgWSOnYtVkK0=;
+ b=DUz6h8+spcazK7trwq8lgi4zz7bviNQO618mUCVfdggPOh/xs/h60pezuMU+d+X1j6hGFAXni86tQBvcQ8G3RaKixFULCCijox+X111fJfDzw+k1oVJ2VZ+JWLJhzTsffnzKlqnCPzQO70Oh5o2SPbIZ0RzmN971rjffSQODTVA=
+X-Mailgun-Sending-Ip: 69.72.42.9
+X-Mailgun-Sending-Ip-Pool-Name: 
+X-Mailgun-Sending-Ip-Pool: 
+X-Mailgun-Sid: WyIyMmVlZCIsInJlaGFuLnNoYWhAYWlzY2hvb2wubmV0IiwiZWY2ZTBiIl0=
+Received: from journ (host-185-193-127-104.njalla.net [185.193.127.104]) by 6bd9ad3c32f2
+ with SMTP id 678651cacddcec4ebc9973f1 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 14 Jan 2025 12:00:10 GMT
+Sender: office=informaticajournal.com@mg.informaticajournal.com
+Received: from informaticajourn by journ with local (Exim 4.96.2)
+	(envelope-from <office@informaticajournal.com>)
+	id 1tXfaa-00580k-1T;
+	Tue, 14 Jan 2025 12:00:08 +0000
+To: rehan.shah@aischool.net
+Subject: =?utf-8?Q?Result_of_the_paper_review?=
+X-PHP-Script: informaticajournal.com/informatica/index.php/cron for 185.193.127.104
+X-PHP-Originating-Script: 1000:Email.php
+From: "INFORMATICA JOURNAL" <office@informaticajournal.com>
+Cc: office@informaticajournal.com
+Reply-To: "office@informaticajournal.com" <office@informaticajournal.com>
+X-Sender: office@informaticajournal.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: <678651c86831f@informaticajournal.com>
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="B_ALT_678651c86836b"
+Date: Tue, 14 Jan 2025 12:00:08 +0000
+
+This is a multi-part message in MIME format.
+Your email application may not support this format.
+
+--B_ALT_678651c86836b
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+Dear Author(s)
+Rehan Shah, 
+It`s our pleasure to inform you that your submitted manuscript entitled
+'Global GPU Network (GGN): Performance Benchmarking and Comparative Analysis
+Against Traditional GPU Computing Models' meets the required qualifications
+to be included in 'INFORMATICA JOURNAL' (ISI-JCR Indexed) based upon the
+reviewers` positive comments on your paper. To this end, we ask you to do
+the following required steps urgently to publish your paper on time. because
+we plan to include your paper in our coming issue. 
+1 Please consider the reviewers comments accessible through the following
+link and revise the required items (if any), then make a final version pdf
+of your manuscript:
+http://www.informaticajournal.com/informatica/pdf/202501141200084098.pdf
+Remember that the bottom and the top margins for all pages should be 3.5cm.
+blank boxes, texts or figures should not cover/cross these important margins
+where we should print the journal information. And please do NOT number your
+pages. 
+2 Please pay the required publication fee for your article.
+The publication fee is 623USD without official DOI. if you wish to have an
+official DOI for your paper as well, with an extra cost of only 177USD, we
+can also register an official DOI for your accepted paper (800USD = total
+amount for publication fee+official DOI)
+
+In both cases, your paper will be listed in Scopus and WoS repositories but
+always having an official DOI is recommended and will increase your paper
+citation.
+Please kindly reply back to this email and let us know with which
+publication method you wish to proceed so that we can provide you with the
+banking details .
+
+ 
+ 
+3 Upload the final version pdf of the article in addition to your
+transaction ID via the URL below 
+Username: uu7k0m 
+Password: aytN5e 
+UPLOAD URL: http://www.informaticajournal.com/final_version.html 
+
+The formal acceptance letter will be sent to you soon after you complete the
+steps above and the article publication will be 2-3 days later unless there
+is a problem with your payment or the final version layout (in this case our
+publication department will contact you). 
+Regards
+Prof.Dr. G. Dzemyda
+Editor-in-Chief
+INFORMATICA JOURNAL (ISSN: 0868-4952)
+Office: INST INFORMATICS, 9 SAULETEKIS AV, VILNIUS, LITHUANIA, LT-10222
+Coverage: Science Citation Index Expanded (Impact Factor: 3.429)
+
+
+--B_ALT_678651c86836b
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Dear Author(s)<br/>
+<b>Rehan Shah, </b><br/><br/>
+It`s our pleasure to inform you that your submitted manuscript entitled 'Gl=
+obal GPU Network (GGN): Performance Benchmarking and Comparative Analysis A=
+gainst Traditional GPU Computing Models' meets the required qualifications =
+to be included in 'INFORMATICA JOURNAL' (ISI-JCR Indexed) based upon the re=
+viewers` positive comments on your paper. To this end, we ask you to do the=
+ following required steps urgently to publish your paper on time. because w=
+e plan to include your paper in our coming issue. <br/> <br/>=20
+<b>1</b> Please consider the reviewers comments accessible through the foll=
+owing link and revise the required items (if any), then make a final versio=
+n pdf of your manuscript:<br/>
+http://www.informaticajournal.com/informatica/pdf/202501141200084098.pdf<br=
+/><br/>
+Remember that the bottom and the top margins for all pages should be 3.5cm.=
+ blank boxes, texts or figures should not cover/cross these important margi=
+ns where we should print the journal information. And please do NOT number =
+your pages. <br/><br/>=20
+<b>2</b> Please pay the required publication fee for your article.<br/>
+The publication fee is 623USD without official DOI. if you wish to have an =
+official DOI for your paper as well, with an extra cost of only 177USD, we =
+can also register an official DOI for your accepted paper (800USD =3D total=
+ amount for publication fee+official DOI)<br/>
+
+In both cases, your paper will be listed in Scopus and WoS repositories but=
+ always having an official DOI is recommended and will increase your paper =
+citation.<br/>
+Please kindly reply back to this email and let us know with which publicati=
+on method you wish to proceed so that we can provide you with the banking d=
+etails .
+
+<br/><br/>=20
+=20
+<b>3</b> Upload the final version pdf of the article in addition to your tr=
+ansaction ID via the URL below <br/><br/>=20
+Username: uu7k0m <br/>
+Password: aytN5e <br/>
+UPLOAD URL: <a href=3D'http://www.informaticajournal.com/final_version.html=
+'> http://www.informaticajournal.com/final_version.html </a><br/><br/>=20
+
+
+The formal acceptance letter will be sent to you soon after you complete th=
+e steps above and the article publication will be 2-3 days later unless the=
+re is a problem with your payment or the final version layout (in this case=
+ our publication department will contact you). <br/><br/>
+Regards<br/>
+<b>Prof.Dr. G. Dzemyda<br/>
+Editor-in-Chief<br/>
+INFORMATICA JOURNAL (ISSN: 0868-4952)<br/>
+Office: INST INFORMATICS, 9 SAULETEKIS AV, VILNIUS, LITHUANIA, LT-10222<br/=
+>
+Coverage: Science Citation Index Expanded (Impact Factor: 3.429)</b>
+
+--B_ALT_678651c86836b--

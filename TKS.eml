@@ -1,0 +1,131 @@
+Delivered-To: rehansnehalshah1@gmail.com
+Received: by 2002:aa7:d9d3:0:b0:58b:49bf:2b20 with SMTP id v19csp6988891eds;
+        Thu, 25 Jul 2024 07:34:55 -0700 (PDT)
+X-Received: by 2002:a2e:88cd:0:b0:2ef:2012:eecf with SMTP id 38308e7fff4ca-2f03db74367mr19256181fa.26.1721918094814;
+        Thu, 25 Jul 2024 07:34:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1721918094; cv=none;
+        d=google.com; s=arc-20160816;
+        b=iGumdFcxB3lprVttcdzXb0v9e5/Hh8r7cEzGs+RWZjNaJ4Cd2Y0YWGg6MS/J41CllY
+         r/QXhsc4lFz4hEXaCCMFWuKHK1zQYXiqvfKsOFL64M73jx/l6dp/XkRsLleU7vI5SDXf
+         mMIKWzojY2rSUFpEqwsKKuPUrNJHEixDuyFABqxeyM9mJwnQ6uFAiaVs7UKzXfJiEgCd
+         fGreEpJBWXp0ZtoFBDBvCuh8N7DsuZoCzW2HSdP2m50yrAzSMFqxMfzMx8i5OLDA5KRj
+         fCGhtlcgq/EdKOG0FPsGwtU25Hl4SIySFkWT9lsI5IZVYx5Zu/pkijfBfEEZ86x778DH
+         sqUg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:mime-version:from:dkim-signature;
+        bh=53j/Jh72x6YqaWgrHZ3zlC19DTna8wIV8zpbaL+DcRg=;
+        fh=agLhQwdTd1JuJZdyITMlAdE8568uG6l+Ih8+PEcMiGg=;
+        b=Wy+y9+p+nu5DOdOt7CZgSQiIy4aARyZxt0Reu2yhpEsU8G5WZCuGWIDZgxPQ78AiJu
+         89lJkIBBKNV0PnV75ep8jyzigpt+3tSZPRYaVPlsPtZkNBcBqbEb8s6BSAhoYCegGULM
+         VSJXzyrpfg5DPC16GjM52ZX1GN7W8ke6jV2mCbZeEelhXnMCcCIplLVBzF+PohysHw50
+         GepkP4Wd+bk4ocBO14HAwF8y8Ix7K8yUKI8ocV/6DZ7Wa9H9lq5RcqWfYLamt4nxnELx
+         gdznxlN5daumQJ+rIexWhd4gASet+lN1O5cdBVcI37LwofohHAE/MVXW4N1YIQ84gRqm
+         F0+g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@tks.world header.s=google header.b=OTpLx29R;
+       spf=pass (google.com: domain of andre.t@tks.world designates 209.85.220.41 as permitted sender) smtp.mailfrom=andre.t@tks.world;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tks.world;
+       dara=pass header.i=@gmail.com
+Return-Path: <andre.t@tks.world>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 38308e7fff4ca-2f03d0d8e84sor3603141fa.7.2024.07.25.07.34.54
+        for <rehansnehalshah1@gmail.com>
+        (Google Transport Security);
+        Thu, 25 Jul 2024 07:34:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of andre.t@tks.world designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tks.world header.s=google header.b=OTpLx29R;
+       spf=pass (google.com: domain of andre.t@tks.world designates 209.85.220.41 as permitted sender) smtp.mailfrom=andre.t@tks.world;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tks.world;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tks.world; s=google; t=1721918094; x=1722522894; dara=google.com;
+        h=to:subject:message-id:date:mime-version:from:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=53j/Jh72x6YqaWgrHZ3zlC19DTna8wIV8zpbaL+DcRg=;
+        b=OTpLx29R4cSziDetp2a/X1ajHITy2IOQ0mpxv4cYRG77DACwd/m46qn28rW4dwmknq
+         g+9PJqOSZt7f9W8skUjTrt6v3/9/sXJtDXsEw5jRRCJXjEK8fTNGAPSiDUmiiVX5bcqL
+         9S3uaIrz2w3MHRX/6S24Kt09LtItdtT/qSi0983vXt/+SQtHrHyrOvuF0f5mWcyf8mFl
+         4c+KsVSIpXuSh38YoB7GUr/j/NDhWQjQs1b0lv1Wc+4nc6HvNiOas9BIk51IYur3a6OR
+         lFtyfS0OgiuQDTtvUf6LArNN+y7vYZ8Xv6HGC47sBDZLzM88TpVLdpIzzxyv/BHsBoqR
+         b94w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1721918094; x=1722522894;
+        h=to:subject:message-id:date:mime-version:from:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=53j/Jh72x6YqaWgrHZ3zlC19DTna8wIV8zpbaL+DcRg=;
+        b=pNteweLMNlgv5CZgvBjsgH2lt7TIcbywpBmXbLfhHJwlfHSG9lNsnDL1AMk7bw92jN
+         0zoEdaxDRWgyU5g6jHs2xHm3C1+T70Grm6VPIHrcb4eUvmnS90ohSHykRNJtGvLFmz6z
+         lJB2jNZLVXoMYmY5qBgGKUFo0VYVj9voxqgV2CxR6gLCdNjXEWgj6u/S077MEKVf+J0V
+         oElvOmVAt77YLepKkv7Ds5h1QEG2UBSrZb8bgMoyDbkZqazEVyasGCMOkH6eGhllKTAo
+         p2nt0kCkF7qaqWKNNrRIGXQXu7vdbw94gNhzTbtbs4rVPs6UwYWq0gF5cZDyiPG+QN4p
+         Rrbg==
+X-Gm-Message-State: AOJu0Yxh43AgV3qsX5+To5cBiDGtZGcAqAOBMVEpN7qc4gKNIC+pdIgV
+	EPxQIJOltbs5/j5tVNmZ1HAGf73OOjsSwhhco5daPcabcMIROJC3YaCIBK1MhqlTnsCmCT/8Ehe
+	I/Oh4Nesv9b3biUDeKakHe04zNYr+7pdxeJHMO28gKXMrMwKA
+X-Google-Smtp-Source: AGHT+IFfZKP9VdfNAOdE07h/u898fwf5K2cLyNp7YkZgfs2vZ6B57T3EaQtqfkBNhectJvZMi9VJmi023bjNkNh+tbA=
+X-Received: by 2002:a2e:86da:0:b0:2ef:28ed:1ff2 with SMTP id
+ 38308e7fff4ca-2f03db56fe6mr19935981fa.9.1721918093453; Thu, 25 Jul 2024
+ 07:34:53 -0700 (PDT)
+Received: from 466680526474 named unknown by gmailapi.google.com with
+ HTTPREST; Thu, 25 Jul 2024 10:34:53 -0400
+From: Mikaela Ergas Lenett from TKS <andre.t@tks.world>
+MIME-Version: 1.0
+X-HS-Fax-Cid: 1crnas4mz05slk2sbi7m0rizmolxrj23nft1xr70lxsoraza5yzizr1jb971betav8ked0a4awxitwslh1jh4tb2uyfuaiv4e91c8rdrw7u477aknoeu5f4tnxxec6own6jx49du8ag2
+Date: Thu, 25 Jul 2024 10:34:53 -0400
+Message-ID: <CABs0_Vc3PbMOPCFVMQEykA__oMGgn6CRB8JtANBZaqPQxz50zA@mail.gmail.com>
+Subject: TKS Future Founders Scholarship
+To: Rehan Shah <rehansnehalshah1@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000004b0a2d061e134c37"
+
+--0000000000004b0a2d061e134c37
+Content-Type: text/plain; charset="UTF-8"
+
+Hey Rehan!
+
+Congrats on being awarded the Future Founder Scholarship! Your challenge
+submission really impressed us, and we're super excited about the
+possibility of having you in our Innovate program this fall.
+
+Could you let us know if you plan to enrol, or should we offer the spot to
+someone else? If you have any questions or just want to chat about the
+program, I'm here to help!
+
+Hope to hear from you soon!
+
+All the best,
+
+Mikaela
+
+--
+
+Mikaela Ergas Lenett
+*Program Director, TKS*
+
+--0000000000004b0a2d061e134c37
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><div style=3D"font-family:sans-serif;color:#444444=
+" dir=3D"auto"><p style=3D"margin:0"><span style=3D"font-size:11pt">Hey Reh=
+an!</span></p><br><p style=3D"margin:0"><span style=3D"font-size:11pt">Cong=
+rats on being awarded the Future Founder Scholarship! Your challenge submis=
+sion really impressed us, and we&#39;re super excited about the possibility=
+ of having you in our Innovate program this fall.</span></p><br><p style=3D=
+"margin:0"><span style=3D"font-size:11pt">Could you let us know if you plan=
+ to enrol, or should we offer the spot to someone else? If you have any que=
+stions or just want to chat about the program, I&#39;m here to help!</span>=
+</p><br><p style=3D"margin:0"><span style=3D"font-size:11pt">Hope to hear f=
+rom you soon!</span></p><br><p style=3D"margin:0"><span style=3D"font-size:=
+11pt">All the best,</span></p><p style=3D"margin:0"><span style=3D"font-siz=
+e:11pt">Mikaela</span></p><p style=3D"margin:0"><span style=3D"font-size:11=
+pt">--</span></p><br><div><div>Mikaela Ergas Lenett</div><div><strong>Progr=
+am Director, TKS</strong></div></div><div style=3D"color:#33475b;font-famil=
+y:&#39;sans-serif&#39;;font-weight:400;font-size:14px"></div><br></div><img=
+ width=3D"1" height=3D"1" style=3D"display:none" alt=3D"" src=3D"https://cB=
+XZ804.na1.hs-service-engage.com/Cto/ZS+23284/cBXZ804/R5R8b47QwN6wdv2k2fDxjW=
+1NvNl_3JGG3TW1VnM6t1XnZspW1Gytc83DHWKhW1Q68zB3GLbcWW3LHcJR1V3Hd3n1X0y_j4W1"=
+></body></html>
+
+--0000000000004b0a2d061e134c37--
